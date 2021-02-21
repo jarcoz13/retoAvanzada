@@ -1,0 +1,8 @@
+Client Id
+
+470501504290-epn3ru4l5vbhp76rqo75j1023b6hvvd2.apps.googleusercontent.com
+
+
+client secret
+
+eFhUxigzSLBszO7ypWA1G8Ni
