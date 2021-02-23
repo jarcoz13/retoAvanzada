@@ -1,0 +1,43 @@
+Si estás en Windows, la ruta para activar el venv es
+
+venv\scripts\activate
+
+variable FLASK_APP en unix
+
+export FLASK_APP=main.py
+
+Y para declarar la variable FLASK_APP (en Windows):
+
+set FLASK_APP=main.py
+
+SI se usa la powershell tienes que usar $env:FLASK_APP="main.py"
+
+flask run
+
+# Debugging en Flask
+
+Debugging: es el proceso de identificar y corregir errores de programación.
+
+Para activar el debug mode escribir lo siguiente en la consola:
+
+export FLASK_DEBUG=1
+echo $FLASK_DEBUG
+
+En windows:
+
+$env:FLASK_DEBUG=1
+
+opción para correr el servidor en modo debug es poner estas lineas al final del archivo main.py:
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+o
+
+if __name__ == '__main__':
+    app.run(port = 5000, debug = True)
+
+
+y correr main.py desde la terminal:
+
+python main.py

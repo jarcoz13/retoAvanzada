@@ -1,4 +1,4 @@
-from flask import session
+from flask import session,render_template, request
 from functools import wraps
 
 
@@ -10,5 +10,6 @@ def login_required(f):
         # the other data for that user/check if they exist
         if user:
             return f(*args, **kwargs)
-        return 'Aun no has iniciado sesión'
+        return render_template('sinLogueo.html', mensaje='Aun no has iniciado sesión')
+        # return 'Aun no has iniciado sesión'
     return decorated_function
