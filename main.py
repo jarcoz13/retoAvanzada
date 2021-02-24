@@ -1,4 +1,4 @@
-from flask import Flask, url_for, redirect, sessions, render_template,request, make_response, flash
+from flask import Flask, url_for, redirect, session, render_template,request, make_response
 from authlib.integrations.flask_client import OAuth
 import os
 
@@ -34,7 +34,8 @@ google = oauth.register(
 @login_required
 def index():
     email = dict(session)['profile']['email']
-    return f'Bienvenido a Google Drive, ingresaste como: {email}!'
+    # return f'Bienvenido a Google Drive, ingresaste como: {email}!'
+    return render_template('home.html', email=email)
 
 
 @app.route('/login')

@@ -1,28 +1,45 @@
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
 
-<div class="navbar navbar-inverse" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button"
-                    class="navbar-toggle"
-                    data-toggle="collapse"
-                    data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar">Opción1</span>
-                <span class="icon-bar">Opción2</span>
-                <span class="icon-bar">Opción3</span>
-            </button>
-            <a class="navbar-brand" href="{{ url_for('index') }}">
-                <img src="{{ url_for('static', filename='img/Gdrive.png') }}"
-                    style="max-width: 80px"
-                    alt="logo"
-                />
-            </a>
-        </div>
+      
 
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="{{ url_for('login') }}">Login</a></li>
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+            <li><!-- <h1 class="logo mr-auto"><a href="#">OnePage</a></h1> -->
+                <!-- Uncomment below if you prefer to use an image logo -->
+                  <a href="{{ url_for('index') }}" class="logo mr-auto">
+                    <!-- <img src="assets/img/logo.png" alt="" class="img-fluid"> -->
+                    <img src="{{ url_for('static', filename='img/Gdrive.png') }}"
+                              style="max-width: 80px"
+                              alt="logo"
+                          />
+                  </a></li>
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li class="drop-down"><a href="">Drop Down</a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="drop-down"><a href="#">Deep Drop Down</a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
             </ul>
-        </div>
+          </li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="{{ url_for('login') }}" class="get-started-btn scrollto">Login</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
     </div>
-</div>
+</header><!-- End Header -->

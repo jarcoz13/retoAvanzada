@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ super() }}
+    404
+{% endblock %}
+
+{% block content %}
+    <h1>Bienvenido a Google Drive</h1>
+    <p>ingresaste como: {{ email }}</p>
+    <a href="/logout">Cerrar sesion</a>
+{% endblock %}
