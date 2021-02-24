@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+
 {% block title %}
 {{ super() }}
     404
@@ -7,5 +8,18 @@
 {% block content %}
     <h1>Bienvenido a Google Drive</h1>
     <p>ingresaste como: {{ email }}</p>
-    <a href="/logout">Cerrar sesion</a>
+
+
+    <table>
+        <tr class="mb-5">
+            <td><a class="btn btn-warning" href="/show_files">Mostrar archivos</a></td>
+            <td>Envíe una solicitud de API y vea una respuesta JSON formateada.</td>
+        </tr>
+        <tr>
+            <td><a class="btn btn-success" href="/create_folders">Crear carpetas</a></td>
+            <td>Crea la carpeta.</td></tr>
+    </table>
+    <br>
+
+    <a class="btn btn-danger" href="/logout">Cerrar sesion</a>
 {% endblock %}

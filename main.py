@@ -1,6 +1,14 @@
 from flask import Flask, url_for, redirect, session, render_template,request, make_response
+
 from authlib.integrations.flask_client import OAuth
 import os
+import google.oauth2.credentials
+import google_auth_oauthlib.flow
+import googleapiclient.discovery
+
+# from extensions import create_folder, get_credentials, get_files, upload_file, copy_file_into_folder, copy_file_into_folder, give_permissions, revoke_permissions
+from extensions import create_folder, get_credentials, get_files
+from values import config
 
 # decorator for routes that should be accessible only by logged in users
 from app.auth_decorator import login_required
@@ -37,7 +45,6 @@ def index():
     # return f'Bienvenido a Google Drive, ingresaste como: {email}!'
     return render_template('home.html', email=email)
 
-
 @app.route('/login')
 def login():
     google = oauth.create_client('google')  # create the google oauth client
@@ -55,7 +62,6 @@ def authorize():
     session.permanent = True  # make the session permanant so it keeps existing after broweser gets closed
     return redirect('/')
 
-
 @app.route('/logout')
 def logout():
     for key in list(session.keys()):
@@ -66,7 +72,16 @@ def logout():
 def not_found(error):
     return render_template('404.html', error=error)
 
-
 @app.errorhandler(500)
 def server_error(error):
     return render_template('500.html', error=error)
+
+
+@app.route("/show_files")
+def show_files():
+    service = get_credentials()
+    get_files(service,10,"")
+    return "SUCCESS show_files"
+
+
+
